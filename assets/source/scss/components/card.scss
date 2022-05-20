@@ -1,0 +1,328 @@
+.card {
+  position: relative;
+  border: rem(5) solid #fff;
+  border-radius: rem(25);
+  background: map-get($color, bg_green);
+  max-width: rem(695);
+  margin: 0 auto;
+
+  &.card-form-start {
+    width: 100%;
+
+    .form-start {
+      .input-rules {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: rem(22);
+        margin-bottom: rem(28);
+      }
+      .input-group {
+        margin-bottom: rem(22);
+      }
+      .contact-us {
+        text-align: center;
+        margin-top: rem(10);
+      }
+    }
+  }
+
+  &.card-key-access {
+    .header-card {
+      text-align: center;
+    }
+    .key-access {
+      text-align: center;
+
+      .body-card {
+        margin: rem(32) 0;
+
+        .input-disclaimer {
+          margin-bottom: rem(8);
+
+          p {
+            font-size: rem(16);
+            line-height: 1.25em;
+            color: map-get($color, bg_dark_blue);
+            text-transform: uppercase;
+          }
+        }
+        .get-info-email {
+          .info-email {
+            font-size: rem(16);
+            line-height: 1.25em;
+            color: #fff;
+          }
+        }
+      }
+      .footer-card {
+        .buttons {
+          margin-bottom: rem(30);
+        }
+      }
+    }
+  }
+
+  &.card-want-to-be-called {
+    .body-card {
+      margin-top: rem(23);
+
+      .input-disclaimer {
+        p {
+          font-size: rem(20);
+          line-height: 1.2em;
+          color: map-get($color, bg_dark_blue);
+        }
+      }
+
+      .form-want-to-be-called {
+        .input-group {
+          margin-bottom: rem(50);
+        }
+      }
+    }
+  }
+
+  &.card-rules {
+    max-width: rem(900);
+    h2 {
+      text-transform: capitalize;
+    }
+    .header-card {
+      max-width: 80%;
+      margin: 0 auto;
+      text-align: center;
+
+      strong {
+        font-weight: bold;
+      }
+    }
+
+    .body-card {
+      max-height: 50vh;
+      min-height: rem(350);
+      margin-top: rem(36);
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding-right: rem(8);
+      .box-footer {
+        text-align: center;
+        margin-top: rem(40);
+
+        .informations {
+          p {
+            font-size: rem(16);
+            line-height: 1.25em;
+
+            strong {
+              font-weight: bold;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.card-send-message-feedback {
+    .form-send-message {
+      .box-message {
+        margin-bottom: rem(35);
+      }
+    }
+  }
+
+  &.card-message-feedback {
+    padding-right: rem(80);
+    padding-left: rem(80);
+
+    &.animation-init {
+      .header-card {
+        text-align: center;
+      }
+    }
+    .header-card {
+      .title {
+        text-align: left;
+      }
+    }
+    .body-message {
+      max-width: rem(520);
+      margin: rem(24) auto 0;
+
+      p {
+        font-size: rem(20);
+        line-height: 1.2em;
+        color: map-get($color, bg_dark_blue);
+
+        + p {
+          margin-top: rem(24);
+        }
+      }
+    }
+  }
+
+  &.card-ranking {
+    .header-card {
+      text-align: center;
+
+      .title-ranked {
+        span {
+          position: relative;
+        }
+      }
+    }
+    .body-card {
+      margin-top: rem(35);
+      overflow: auto;
+      height: 100%;
+
+      .rank {
+        ul {
+          li {
+            + li {
+              margin-top: rem(27);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.card-end {
+    max-width: rem(830);
+
+    .header-card {
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: $mini-tablet-portrait-up) {
+    padding: rem(54);
+
+    &.card-ranking {
+      padding-right: rem(27);
+      padding-left: rem(27);
+
+      .body-card {
+        padding: rem(27);
+        max-height: rem(517);
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet-portrait-down) {
+    &.card-rules {
+      .header-card {
+        margin-left: 5%;
+        max-width: 100%;
+      }
+    }
+
+    &.card-ranking {
+      padding-right: rem(12);
+      padding-left: rem(12);
+
+      .body-card {
+        max-height: rem(450);
+        padding: rem(12);
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile-only) {
+    padding: rem(27) rem(15);
+
+    &.card-form-start {
+      .input-rules {
+        flex-direction: column;
+        justify-content: center;
+        gap: rem(12);
+      }
+    }
+
+    &.card-key-access {
+      .key-access {
+        .body-card {
+          .input-disclaimer {
+            max-width: rem(250);
+            margin: 0 auto rem(8);
+          }
+        }
+      }
+    }
+
+    &.card-want-to-be-called {
+      .header-card {
+        text-align: center;
+      }
+      .body-card {
+        .input-disclaimer {
+          max-width: 80%;
+          margin: 0 auto;
+
+          p {
+            text-align: center;
+            font-size: rem(16);
+          }
+        }
+        .form-want-to-be-called {
+          .input-group {
+            margin-bottom: rem(32);
+          }
+        }
+      }
+    }
+
+    &.card-rules {
+      .body-card {
+        .box-footer {
+          .informations {
+            p {
+              font-size: rem(16);
+            }
+          }
+        }
+      }
+    }
+
+    &.card-message-feedback {
+      text-align: center;
+      padding: rem(27) rem(10);
+
+      .header-card {
+        .title {
+          text-align: center;
+        }
+      }
+      .body-message {
+        margin: rem(24) auto 0;
+
+        p {
+          font-size: rem(16);
+
+          + p {
+            margin-top: rem(18);
+          }
+        }
+      }
+    }
+
+    &.card-ranking {
+      .body-card {
+        margin-top: rem(35);
+        max-height: rem(300);
+
+        .rank {
+          ul {
+            li {
+              + li {
+                margin-top: rem(20);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

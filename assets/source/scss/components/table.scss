@@ -1,0 +1,48 @@
+.tables {
+  margin: rem(24) 0;
+
+  p {
+    font-size: rem(20);
+    margin-bottom: rem(20);
+  }
+
+  table {
+    width: 100%;
+    background: #fff;
+    thead {
+      tr {
+        text-align: center;
+      }
+    }
+    thead,
+    tbody {
+      tr {
+        th,
+        td {
+          border: rem(2) solid map-get($color, bg_gray);
+        }
+        th {
+          padding: rem(16);
+        }
+        td {
+          padding: rem(6);
+
+          p {
+            font-size: rem(14);
+            line-height: 1.2em;
+
+            + p {
+              margin-top: rem(16);
+            }
+          }
+        }
+      }
+    }
+  }
+  // entender porque esta funcionando o overflow
+  @media screen and(max-width: $tablet-portrait-down) {
+    .table-wrap {
+      overflow: auto;
+    }
+  }
+}

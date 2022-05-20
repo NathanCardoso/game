@@ -1,0 +1,137 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(34);
+  position: relative;
+
+  .error-info {
+    display: none;
+    margin-top: rem(8);
+    color: map-get($color, bg_dark_blue);
+  }
+
+  label {
+    display: inline-block;
+    font-size: rem(16);
+    line-height: 1.07em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: rem(11);
+
+    &.error {
+      font-size: rem(14);
+      text-transform: none;
+      margin-top: rem(6);
+      color: map-get($color, bg_dark_blue);
+      position: absolute;      
+    }
+    &#email-error {
+      bottom: rem(-27);
+      left: 0;
+    }
+    &#access-code-error {
+      top: rem(-25);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &#message-error,
+    &#nome-error {
+      bottom: rem(-30);
+    }
+  }
+
+  input {
+    background: map-get($color, bg_gray);
+    border: rem(2) solid #fff;
+    border-radius: rem(32);
+    padding-left: rem(38);
+    padding-right: rem(38);
+    
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active{
+      -webkit-box-shadow: 0 0 0 30px map-get($color, bg_gray) inset !important;
+    }
+
+    
+
+    &[type="text"],
+    &[type="email"] {
+      padding-top: rem(20);
+      padding-bottom: rem(20);
+    }
+
+    &#access-code {
+      max-width: 60%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: rem(38);
+      font-weight: bold;
+      line-height: 1.18em;
+      padding-top: rem(8);
+      padding-bottom: rem(8);
+      color: map-get($color, bg_blooming_pink);
+
+      &:-webkit-autofill{
+        -webkit-text-fill-color: map-get($color, bg_blooming_pink) !important;
+      }
+    }
+  } 
+
+  textarea {
+    display: block;
+    width: 100%;
+    border-radius: rem(21);
+    border: rem(2) solid #fff;
+    background: map-get($color, bg_gray);
+    padding: rem(22);
+    font-size: rem(18);
+  }
+
+  .focused {
+    &:focus {
+      &::placeholder {
+        color: transparent;
+      }
+    }
+    &::placeholder {
+      transition: all .2s linear;
+      font-size: rem(18);
+      line-height: 1.05em;
+      color: map-get($color, bg_dark_blue);
+    }
+  }
+
+  @media screen and (max-width: $mobile-only){
+    input {
+      &[type="text"],
+      &[type="email"] {
+                      
+        padding-left: rem(22);
+        padding-right: rem(22);
+
+        &::placeholder {          
+          font-size: rem(16);
+        }
+      }
+
+      &#access-code {
+        max-width: 100%;
+        font-size: rem(20);
+        padding: rem(10) 0;
+        width: 100%;
+      }
+    }
+    textarea {
+      font-size: rem(14);
+      padding-right: rem(18);
+      padding-left: rem(18);
+    }
+    .focused {
+      &::placeholder {
+        font-size: rem(16);
+      }
+    }
+  }
+}

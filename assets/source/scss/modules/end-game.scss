@@ -1,0 +1,55 @@
+#endGame {
+  position: relative;
+
+  .screen-height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: url("#{$image-path}bg-image-gray-circles.png") no-repeat
+        center center;
+      background-size: contain;
+    }
+  }
+  .content {
+    position: relative;
+    color: map-get($color, bg_dark_blue);
+
+    .content-header {
+      padding-top: rem(32);
+      margin-bottom: rem(64);
+    }
+    .content-body {
+      text-align: center;
+    }
+  }
+
+  .end-game {
+    .body {
+      margin: rem(32) auto rem(48);
+
+      p {
+        font-size: rem(20);
+        line-height: 1.2em;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile-only) {
+    .end-game {
+      .body {
+        p {
+          font-size: rem(16);
+        }
+      }
+    }
+  }
+}

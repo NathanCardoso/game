@@ -1,0 +1,12 @@
+.contact-us {
+  a {
+    font-size: rem(14);
+    color: map-get($color, bg_dark_blue);
+  }
+
+  &.footer-link {
+    a {
+      font-size: rem(16);
+    }
+  }
+}

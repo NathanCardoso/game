@@ -1,0 +1,108 @@
+.modal-roulette {
+  position: relative;
+  max-width: rem(570);
+  margin: 0 auto;
+  top: 20%;
+
+  &.modal-chance-to-win {
+    max-width: rem(850);
+
+    .modal-content {
+      .modal-content-body{
+        .body-message {
+          h3 {
+            line-height: 1.4em;
+          }
+        }
+      }
+    }
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .modal-content-header {
+      .modal-roulette-image {
+        max-width: rem(242);
+
+        img {
+          display: block;
+          max-width: 100%;
+        }
+      }      
+    }
+    .modal-content-body {
+      margin-top: rem(45);
+
+      .body-message {
+        text-align: center;
+
+        h3 {          
+          font-weight: bold;
+          color:#fff;          
+          &.message-won {
+            color: map-get($color, bg_green);
+          }
+          &.message-lost {
+            color: map-get($color, bg_blooming_pink);
+          }
+
+          span {
+            color: map-get($color, bg_green);
+          }
+        }
+
+        p {          
+          line-height: 1.5em;
+          color: #fff;
+          font-weight: 400;
+
+          .more-points {            
+            font-weight: bold;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+    .modal-content-footer {
+      max-width: rem(350);
+      margin-top: rem(60);
+    }
+  }
+  
+  @media screen and (min-width: $mini-tablet-portrait-up){
+    .modal-content-body {
+      .body-message {
+        h3 {
+          font-size: rem(50);
+        }
+        p {
+          font-size: rem(35);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $mobile-only){
+    .modal-content {
+      .modal-content-header {
+        .modal-roulette-image {
+          max-width: rem(150);
+        }
+      }
+    }
+    .modal-content-body {
+      .body-message {
+        h3 {
+          font-size: rem(32);
+          margin-bottom: rem(12);          
+        }
+
+        p {
+          font-size: rem(24);
+        }
+      }
+    }
+  }
+}

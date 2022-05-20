@@ -1,0 +1,8 @@
+.container { 
+  padding: 0 rem(24px);
+  margin: 0 auto;
+
+  &.container-content {
+    max-width: rem(1000);
+  }
+}

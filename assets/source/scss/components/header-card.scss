@@ -1,0 +1,18 @@
+.header-card {
+
+  p {
+    color: map-get($color, bg_dark_blue);
+    font-size: rem(22);
+    line-height: 1.2em;
+  }
+  small {
+    display: block;
+    font-size: rem(18);
+    color: #fff;
+  }
+  @media screen and(max-width: $mobile-only){
+    p {
+      font-size: rem(16);
+    }
+  }
+}

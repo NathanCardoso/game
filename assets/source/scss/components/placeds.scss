@@ -1,0 +1,241 @@
+.placeds {
+  position: relative;
+  width: 100%;
+
+  &.top-ranked {
+    .placed-content {
+      .total-of-points {
+        &.winners  {
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;                        
+            transform: translateY(-50%);
+          }
+
+          &.first-place::after {
+            background: url('#{$image-path}ouro.svg') center no-repeat;
+            background-size: cover;
+          }
+          &.second-place::after {
+            background: url('#{$image-path}prata.svg') center no-repeat;
+            background-size: cover;
+          }
+          &.third-place::after {
+            background: url('#{$image-path}bronze.svg') center no-repeat;
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
+  .placed-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: rem(2) solid #fff;
+    border-radius: rem(50);
+    background: map-get($color, bg_white_alt);
+
+    .number {
+     
+      font-weight: bold;
+      line-height: .83em;
+      color: #fff;
+    }
+    
+    .number-ranked {
+      position: absolute;
+      left: rem(-6px);
+      background: map-get($color, bg_blooming_pink);
+      border-radius: rem(50);
+      border: rem(2) solid #fff;
+      width: rem(65);
+      height: rem(65); 
+          
+      .number {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    
+    .name-placed {
+      text-transform: uppercase;      
+      background: map-get($color, bg_white_alt);      
+    
+      h4 {        
+        line-height: 1.1em;
+        color: map-get($color, bg_dark_blue);      
+      }
+      .sub-name {
+        display: block;        
+        line-height: 1.25em;
+        color: map-get($color, bg_graphitte);
+      }
+    }  
+    
+    .total-of-points {
+      position: relative;
+      background: map-get($color, bg_blooming_pink);
+      border-radius: 0 rem(50) rem(50) 0;
+      text-align: center;      
+      height: 100%;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;        
+        top: 0;
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+  @media screen and (min-width: $mini-tablet-portrait-up) {
+    &.top-ranked {
+      .placed-content {
+        .number-ranked {
+          width: rem(75);
+          height: rem(75); 
+        }
+        .total-of-points {
+          &.winners  {
+            &::after {                    
+              left: rem(-35);
+              width: rem(45);
+              height: rem(43);            
+            }
+          }
+        }
+      }
+    }
+    .placed-content {      
+      .number {
+        font-size: rem(34);
+      }
+      .number-ranked {
+        width: rem(65);
+        height: rem(65); 
+      }
+      .name-placed {
+        margin-left: rem(80);
+
+        h4 {
+          font-size: rem(18);
+        }
+        .sub-name {
+          font-size: rem(12);
+        }
+      }
+      .total-of-points {
+        padding: rem(15) rem(30);
+
+        &::before {
+          left: rem(-35);
+          border-bottom: rem(58) solid map-get($color, bg_blooming_pink);
+          border-left: rem(36) solid transparent;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $mobile-only){
+    &.top-ranked {
+      .placed-content {
+        .number-ranked {
+          width: rem(48);
+          height: rem(48);
+        }
+        .total-of-points {
+          &.winners  {
+            &::after {                    
+              left: rem(-20);
+              width: rem(27);
+              height: rem(29);
+            }
+          }
+        }
+      }
+    }
+    .placed-content {      
+      .number {
+        font-size: rem(20);
+      }
+      .number-ranked {
+        width: rem(45);
+        height: rem(45); 
+      }
+      .name-placed {
+        margin-left: rem(45);
+
+        h4 {
+          font-size: rem(14);
+        }
+        .sub-name {
+          font-size: rem(10);
+        }
+      }
+      .total-of-points {
+        padding: rem(10);
+
+        &::before {
+          left: rem(-20);
+          border-bottom: rem(38) solid map-get($color, bg_blooming_pink);
+          border-left: rem(20) solid transparent;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 375px){
+    &.top-ranked {
+      .placed-content {
+        .number-ranked {
+          width: rem(48);
+          height: rem(48);
+        }
+        .total-of-points {
+          &.winners  {
+            &::after {                    
+              left: rem(-20);
+              width: rem(27);
+              height: rem(29);
+            }
+          }
+        }
+      }
+    }
+    .placed-content {      
+      .number {
+        font-size: rem(14);
+      }
+      .number-ranked {
+        width: rem(45);
+        height: rem(45); 
+      }
+      .name-placed {
+        margin-left: rem(45);
+
+        h4 {
+          font-size: rem(12);
+        }
+        .sub-name {
+          font-size: rem(8);
+        }
+      }
+      .total-of-points {
+        padding: rem(10);
+
+        &::before {
+          left: rem(-20);
+          border-bottom: rem(36) solid map-get($color, bg_blooming_pink);
+          border-left: rem(20) solid transparent;
+        }
+      }
+    }
+  }
+  
+}
+

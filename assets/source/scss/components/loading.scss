@@ -1,0 +1,70 @@
+.loading {  
+  display: none;
+
+  &.show {
+    display: block;    
+  }
+  
+  .overlay-loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;  
+    background: map-get($color, bg_dark);
+   
+    .loading-ui {      
+      display: flex;
+      align-items: center;
+      gap: rem(10);
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &::after {
+        content: '';
+        display: block;
+        min-width: rem(16);          
+        border-radius: 100%;
+        border: rem(5) solid #fff;
+        border-top-color: transparent;
+        animation: loading-game .5s linear infinite;
+      }
+    }
+    @keyframes loading-game {
+      to {
+        transform: rotate(360deg);
+      }
+    }  
+  }
+  @media screen and (min-width: $mini-tablet-portrait-up) {
+    .overlay-loading {
+      .loading-ui {
+        font-size: rem(28);
+
+        &::after {        
+          width: rem(25);
+          height: rem(25);
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: $mobile-only) {    
+    .overlay-loading {
+      .loading-ui {
+        font-size: rem(20);
+
+        &::after {        
+          width: rem(15);
+          height: rem(15);
+        }
+      }
+    }
+  }
+}

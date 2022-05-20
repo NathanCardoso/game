@@ -1,0 +1,56 @@
+.title {  
+  text-transform: uppercase;  
+  font-weight: bold;
+  line-height: 1.2em;
+  display: inline-block;
+
+  &.title-card {
+    color: map-get($color, bg_dark_blue);
+  }
+  &.title-roulette {
+    color: #fff;
+    text-align: center;
+  }
+  &.title-quiz {
+    text-transform: none;
+    color: map-get($color, bg_dark_blue);
+  }
+  &.title-ranked {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: rem(-10);
+      left: rem(-30);      
+      background: url('#{$image-path}ranking-title.svg') center no-repeat;
+      background-size: contain;
+    }
+  }
+
+
+  @media screen and(min-width: $tablet-portrait-up) {
+    font-size: rem(28);
+  }
+  @media screen and (max-width:$tablet-portrait-down) and (min-width: $mini-tablet-portrait-up){
+    font-size: rem(24);
+  }
+  @media screen and(min-width: $mini-tablet-portrait-up) {
+    &.title-ranked {
+      &::before {        
+        width: rem(62.74);
+        height: rem(57.91);
+      }
+    }
+  }
+  @media screen and(max-width: $mobile-only){
+    font-size: rem(20);
+
+    &.title-ranked {
+      &::before {        
+        width: rem(46.7344);
+        height: rem(41.9062);
+      }
+    }
+  }
+}

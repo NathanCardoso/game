@@ -1,0 +1,207 @@
+.buttons {
+  width: 100%;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(20);
+
+    li {
+      width: 100%;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    border: rem(2) solid #fff;    
+    line-height: 1.25em;
+    font-weight: bold;
+    border-radius: rem(35);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.btn-loading {
+      .load {
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: calc(50% - #{rem(11)});
+          left: calc(#{rem(-16)} + #{rem(-10)});
+          width: rem(16);
+          height: rem(16);
+          min-width: rem(16);          
+          border-radius: 100%;
+          border: rem(3) solid #fff;
+          border-top-color: transparent;
+          animation: loading-ui .35s linear infinite;
+        }
+        @keyframes loading-ui {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+
+    &.btn-cancel {
+      color: #fff;
+      background: transparent;
+    }
+
+    &.btn-confirm {
+      color: #fff;
+      background: map-get($color, bg_blooming_pink);      
+    }
+
+    &.btn-rank-quiz {
+      color: #fff;
+      background: map-get($color, bg_green);
+    }
+
+    &.btn-answer-next {
+      line-height: rem(20);      
+      display: flex;
+      align-items: center;
+      gap: rem(6);
+      padding: rem(18) rem(50);
+
+      &.answer-correct {
+        background: map-get($color, bg_green);
+        color: map-get($color, bg_dark_blue);
+
+        .arrow {
+          svg {
+            path {
+              fill: map-get($color, bg_dark_blue);
+            }
+          }
+        }
+      }
+      &.answer-wrong {
+        background: map-get($color, bg_blooming_pink);
+        color: #fff;
+        .arrow {
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    &.btn-next-question {
+      color: map-get($color, bg_dark_blue);
+      background: map-get($color, bg_green);
+      border-radius: rem(40);
+    }
+
+    &.btn-next-step {
+      font-size: rem(28);
+      line-height: 0;
+      text-transform: capitalize;
+      color: map-get($color, bg_dark_blue);
+      background: map-get($color, bg_green);
+      border: rem(2) solid #fff;
+      padding: rem(18) rem(32);
+      display: flex;
+      align-items: center;
+      gap: rem(6);
+    }
+
+    &.btn-to-rank,
+    &.btn-to-finish {
+      border-width: rem(2);
+      border-style: solid;
+      width: 100%;
+    }
+
+    &.btn-to-rank {
+      color: #fff;
+      background: map-get($color, bg_blooming_pink);
+      border-color: #fff;
+    }
+    &.btn-to-finish {
+      color: map-get($color, bg_dark_blue);
+      background: #fff;  
+      border-color: #B9BABC;    
+
+    }
+  }
+
+  &.close-card-modal {
+    position: absolute;
+    top: rem(-30);
+    right: rem(-20);
+    background: url('#{$image-path}/icons/icon-close.svg') center no-repeat;
+    background-size: cover;
+    outline: none;
+    border: none;
+  }
+
+  @media screen and (min-width: $tablet-portrait-up) {
+    ul {
+      li {
+        .btn {
+          font-size: rem(20);
+          &.btn-cancel {            
+            padding: rem(18) rem(26);
+          }
+      
+          &.btn-confirm {            
+            padding: rem(18) rem(90);
+          }
+          &.btn-rank-quiz {
+            padding: rem(18);
+          }
+          &.btn-to-rank,
+          &.btn-to-finish {
+            font-size: rem(25);
+            padding: rem(18); 
+          }
+
+          &.btn-next-question {
+            padding: rem(20);
+          }
+        }
+      }
+    }
+
+    &.close-card-modal {
+      width: rem(96.39);    
+      height: rem(96.39);            
+    }
+  }
+  @media screen and (max-width: $tablet-portrait-down) {
+    ul {
+      flex-direction: column-reverse;
+
+      li {
+        width: 100%;
+
+        .btn {
+          width: 100%;
+          font-size: rem(18);
+          padding: rem(18) 0;
+        }
+      }
+    }
+
+    &.close-card-modal {
+      width: rem(80);    
+      height: rem(80);            
+    }
+  }
+  @media screen and (max-width: $mobile-only){
+    &.close-card-modal {
+      width: rem(50);    
+      height: rem(50);            
+    }
+  }
+}

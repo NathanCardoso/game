@@ -1,0 +1,79 @@
+.modal-answer {
+  position: relative;
+  max-width: rem(550);
+  margin: 0 auto;
+  top: 20%;
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .modal-content-header {
+      .answer-simbol-img {
+
+        img {
+          display: block;
+          max-width: 100%;
+        }
+      }
+    }
+    .modal-content-body {
+      margin-top: rem(65);
+
+      .response {
+        text-align: center;
+        color: #fff;
+
+        .response-answer {
+          font-size: rem(50);
+          line-height: 1.25em;
+          font-weight: bold;
+          margin-bottom: rem(17);
+
+          .response-correct {
+            color: map-get($color, bg_green);
+          }
+          .response-wrong {
+            color: map-get($color, bg_blooming_pink);
+          }
+          
+        }
+        .you-won {
+          font-size: rem(35);
+          line-height: 1.25em;
+          .points {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .modal-content-footer {
+      margin-top: rem(147);
+    }
+  }
+
+
+  @media screen and (max-width: $mobile-only) {
+    .modal-content {
+      .modal-content-header {
+        .answer-simbol-img {
+          max-width: rem(120);
+        }
+      }
+      .modal-content-body {
+        .response {
+          .response-answer {
+            font-size: rem(28);
+          }
+          .you-won {
+            font-size: rem(20);
+          }
+        }
+      }
+      .modal-content-footer {
+        margin-top: rem(100);
+      }
+    }
+  }
+}

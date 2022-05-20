@@ -1,0 +1,55 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0 rem(32px);
+  z-index: 2;
+  overflow-y: auto;
+  font-size: 0;
+  text-align: center;
+
+  &.show {
+    display: block;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: map-get($color, bg_dark);
+
+    &.light-overlay {
+      opacity: .95;
+    }
+  }
+
+  .fix {
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(1);
+    height: 100%;
+  }
+
+  .inside-modal {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: calc(100% - #{rem(1)});
+    width: calc(100% - 64px);
+    text-align: left;
+    margin: rem(35) 0;
+    font-size: rem(16);
+  }
+
+  @media screen and(max-width: 375px){
+    padding: 0;
+
+    .inside-modal {
+      width: calc(100% - 32px);
+    }
+  }
+}
