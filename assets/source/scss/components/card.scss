@@ -1,28 +1,38 @@
 .card {
   position: relative;
-  border: rem(5) solid #fff;
+  border: rem(5) solid map-get($color, bg_graphitte_alt);
   border-radius: rem(25);
-  background: map-get($color, bg_green);
-  max-width: rem(695);
+  background: rgba(255, 255, 255, 0.43);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 100%;
   margin: 0 auto;
 
   &.card-form-start {
-    width: 100%;
+    width: rem(860);
 
-    .form-start {
-      .input-rules {
+    .card-content {
+      .header-card {
+        width: 100%;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: rem(22);
-        margin-bottom: rem(28);
+        justify-content: center;
       }
-      .input-group {
-        margin-bottom: rem(22);
-      }
-      .contact-us {
-        text-align: center;
-        margin-top: rem(10);
+
+      .form-start {
+        .input-rules {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: rem(22);
+          margin-bottom: rem(28);
+        }
+        .input-group {
+          margin-bottom: rem(22);
+        }
+        .contact-us {
+          text-align: center;
+          margin-top: rem(10);
+        }
       }
     }
   }
@@ -198,7 +208,7 @@
   }
 
   @media screen and (min-width: $mini-tablet-portrait-up) {
-    padding: rem(54);
+    padding: rem(54) rem(150);
 
     &.card-ranking {
       padding-right: rem(27);

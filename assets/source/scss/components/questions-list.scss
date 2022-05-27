@@ -1,11 +1,12 @@
 .questions-list {
-  .option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(32);
 
+  .option {
     transition: background .25s linear;
-    
-    + li {
-      margin-top: rem(20);
-    }
+
     &:hover,
     &.selected {
       background: map-get($color, bg_dark_purple);
@@ -14,6 +15,7 @@
     background: map-get($color, bg_dark_blue);
     border: rem(2) solid #fff;
     border-radius: rem(40);
+    width: 50%;
 
     .option-wrap {
       display: flex;

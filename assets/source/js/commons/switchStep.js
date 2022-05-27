@@ -6,7 +6,7 @@ const switchStep = (currentStep, nextStep) => {
     .removeClass('visible')
     .fadeOut(
       function(){
-        // proximo passo fica visivel
+        // proximo passo fica visivel        
         nextStep
           .removeClass('hide')
           .fadeIn()

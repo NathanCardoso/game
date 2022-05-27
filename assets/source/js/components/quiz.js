@@ -1,6 +1,8 @@
 const quiz = () => {
   
   // tela de Inicio do quiz   
+  const quiz = $('#quiz')
+  const roulette = $('#roulette')
   const fadeInTime = $('.timer')
   const btnInit = $('#quiz .start-quiz .buttons .btn-confirm')
   const btnSubmit = $('#quiz .footer-questions')
@@ -15,7 +17,7 @@ const quiz = () => {
   const modalFeedbackRight = $('.modal.modal-answer-correct')
   const modalFeedbackWrong = $('.modal.modal-answer-wrong')
   const btnNextAnswer = $('.modal-answer .buttons .btn-answer-next')
-  
+  const btnWrongAnswer = $('.modal-answer-wrong .button .btn-answer-next answer-wrong')
   
   let timeInterval
   let selfData = {}
@@ -25,22 +27,26 @@ const quiz = () => {
 
   btnInit.on('click', function() {
     $(this).addClass('btn-loading')
+
+    setTimeout(() => {
+      switchStep(currentStep, currentStep.find('.step-2'))
+    }, 1500)
     
-    ajax({
-      action: 'questionsAnswer',
-      method: 'get',
-      headers: {
-        Authorization: `Bearer ${storage("GET", "corteva-token")}}`
-      },
-      callback: function(data) {
-        if(data.sucesso) { 
-          selfData.questions = data.data
-          selfData.index = 0
-          quizDynamic (selfData)
-          switchStep(currentStep, currentStep.find('.step-2'))
-        }
-      }
-    })
+    // ajax({
+    //   action: 'questionsAnswer',
+    //   method: 'get',
+    //   headers: {
+    //     Authorization: `Bearer ${storage("GET", "corteva-token")}}`
+    //   },
+    //   callback: function(data) {
+    //     if(data.sucesso) { 
+    //       selfData.questions = data.data
+    //       selfData.index = 0
+    //       quizDynamic (selfData)
+    //       switchStep(currentStep, currentStep.find('.step-2'))
+    //     }
+    //   }
+    // })
   })
 
   formQuiz.on('submit', function(e){
@@ -50,67 +56,99 @@ const quiz = () => {
     const responseAnswer = $(this).find('input[type="radio"]:checked').val()
     const timeResponse = timeQuestion.val()   
     
-    timeInterval.clearTime()
-    btnSubmit.find('.btn-next-question').prop('disabled', true)
+    // timeInterval.clearTime()
+    // btnSubmit.find('.btn-next-question').prop('disabled', true)
     loadingGame.addClass('show')
 
-    ajax({
-      action: 'saveAnswer',
-      method: 'post',
-      data: {
-        question_id: questioId,
-        questionsanswer_id: responseAnswer,
-        questionsTime: timeResponse
-      },
-      headers: {
-        Authorization: `Bearer ${storage("GET", "corteva-token")}}`
-      },
-      callback: function(data) {
-        if(data.sucesso) {
-          if(data.acertou) {  
+    setTimeout(() => {
+      loadingGame.removeClass('show')
+    }, 1500)
 
-            $(modalFeedbackRight).fadeIn(
-              function() {
-                loadingGame.removeClass('show')
-                AUDIO_LOAD.feedbackYes.play()
-                AUDIO_LOAD.feedbackCorrect.play()
+    if (responseAnswer === 'yes') {
+      $(modalFeedbackRight).fadeIn()
+    } else {
+      $(modalFeedbackWrong).fadeIn()
+    }
+
+    // ajax({
+    //   action: 'saveAnswer',
+    //   method: 'post',
+    //   data: {
+    //     question_id: questioId,
+    //     questionsanswer_id: responseAnswer,
+    //     questionsTime: timeResponse
+    //   },
+    //   headers: {
+    //     Authorization: `Bearer ${storage("GET", "corteva-token")}}`
+    //   },
+    //   callback: function(data) {
+    //     if(data.sucesso) {
+    //       if(data.acertou) {  
+
+    //         $(modalFeedbackRight).fadeIn(
+    //           function() {
+    //             loadingGame.removeClass('show')
+    //             AUDIO_LOAD.feedbackYes.play()
+    //             AUDIO_LOAD.feedbackCorrect.play()
                 
-                scrollingTo(window.screenTop)
-              }
-            )
+    //             scrollingTo(window.screenTop)
+    //           }
+    //         )
 
-          } else {
-            $(modalFeedbackWrong).fadeIn(
-              function () {
-                AUDIO_LOAD.feedbackWrong.play()
-                loadingGame.removeClass('show')
+    //       } else {
+    //         $(modalFeedbackWrong).fadeIn(
+    //           function () {
+    //             AUDIO_LOAD.feedbackWrong.play()
+    //             loadingGame.removeClass('show')
 
-                scrollingTo(window.screenTop)
+    //             scrollingTo(window.screenTop)
                 
-              }
-            )
-          }
-        }
-      }
-    })
+    //           }
+    //         )
+    //       }
+    //     }
+    //   }
+    // })
   })
 
-  btnNextAnswer.on('click', function(e){
+  $(btnNextAnswer.get(0)).on('click', function(e){
     e.preventDefault()
-
+    
     $(this).addClass('btn-loading')
     $(this).prop('disable', true)
-    $(this).closest('div.modal').fadeOut(
-      function() {
+    
+    setTimeout(() => {
+      quiz.fadeOut()
+      roulette.fadeIn()
+      $(this).closest('div.modal').fadeOut(
+        function() {
+          
+          btnNextAnswer.removeClass('btn-loading')
+          btnNextAnswer.prop('disable', false)
+          
+          // selfData.index += 1
+          // quizDynamic (selfData)
+          
+        }
+        )
+      }, 1500)
+  })
 
-        btnNextAnswer.removeClass('btn-loading')
-        btnNextAnswer.prop('disable', false)
+  $(btnNextAnswer.get(1)).on('click', function(e) {
+    e.preventDefault()
+    $(this).addClass('btn-loading')
+    $(this).prop('disable', true)
 
-        selfData.index += 1
-        quizDynamic (selfData)
+    console.log($(this))
 
-      }
-    )
+    setTimeout(() => {
+      $(this).closest('div.modal').fadeOut(
+        function() {
+          btnWrongAnswer.removeClass('btn-loading')
+          btnWrongAnswer.prop('disable', false)
+        }
+      )
+    }, 1500)
   })
 
   function quizDynamic (args) {
@@ -118,8 +156,8 @@ const quiz = () => {
       const answers = args.questions[args.index].answers      
       const questionPoints = args.questions[args.index].questionsPoints
       // limpando os campos
-      btnSubmit.removeClass('show')
-      btnSubmit.find('.btn-next-question').prop('disabled', false)
+      // btnSubmit.removeClass('show')
+      // btnSubmit.find('.btn-next-question').prop('disabled', false)
 
       idQuestion.val(args.questions[args.index].id)
       timeQuestion.val("")

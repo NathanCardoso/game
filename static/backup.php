@@ -23,7 +23,7 @@ endif;
   <body>
     <div id="app">
       <!-- loading -->
-      <div class="loading">
+      <div class="loading show">
         <div class="overlay-loading">
           <span class="loading-ui">Carregando</span>
         </div>
@@ -58,7 +58,7 @@ endif;
         </div>
       </div>      
       <!-- tela inicial -->
-      <div id="welcome" style="display: none">
+      <div id="welcome" style="display: block">
         <div class="background two-background"></div>
         <!-- transição das logos -->
         <div class="container container-content">
@@ -82,66 +82,70 @@ endif;
         </div>
       </div>
       <!-- tela de inicio de login -->
-      <div id="start" style="display: block">
+      <div id="start" style="display: none">
         <div class="background gray-background"></div>
         <div class="container container-content">
           <div class="wrapper">
             <div class="screen-height">
               <div class="content">
+                <div class="header-logo">
+                  <img src="<?php print CDN_URL; ?>/images/small-center.png" alt="" />
+                </div>
                 <div class="content-steps">
                   <div class="step step-1" style="display: block">
                     <!-- Informe seu email -->
                     <div class="card card-form-start">
-                      <div class="card-content">
-                        <div class="header-card">
-                          <h2 class="title title-start">
-                            Olá, digite o seu nome
-                          </h2>
-                        </div>
-                        <div class="form-start">
-                          <form id="form-login">
-                            <div class="input-group">
-                              <label for="name"></label>
-                              <input
-                                class="focused"
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Gabyzinha"
-                              />
-                              <span class="error-info"></span>
+                      <div class="header-card">
+                        <h2 class="title title-card">
+                          Por favor informe seu email
+                        </h2>
+                      </div>
+                      <div class="form-start">
+                        <form id="form-login">
+                          <div class="input-group">
+                            <label for="email">Digite seu email</label>
+                            <input
+                              class="focused"
+                              type="email"
+                              id="email"
+                              name="email"
+                              placeholder="funcionário@servidor.com.br"
+                            />
+                            <span class="error-info"></span>
+                          </div>
+                          <div class="input-rules">
+                            <div class="checkbox">
+                              <div class="checkbox-input">
+                                <input
+                                  type="checkbox"
+                                  name="check"
+                                  id="rules"
+                                  class="sr-only input-check"
+                                />
+                                <label for="rules">
+                                  <span class="check"></span>
+                                  <small
+                                    >Eu li e concordo com o
+                                    <a href="#" class="call-to-rules"
+                                      >Regulamento</a
+                                    ></small
+                                  >
+                                </label>
+                              </div>
                             </div>
-                            <div class="input-rules">
-                              <!-- <div class="checkbox">
-                                <div class="checkbox-input">
-                                  <input
-                                    type="checkbox"
-                                    name="check"
-                                    id="rules"
-                                    class="sr-only input-check"
-                                  />
-                                  <label for="rules">
-                                    <span class="check"></span>
-                                    <small
-                                      >Eu li e concordo com o
-                                      <a href="#" class="call-to-rules"
-                                        >Regulamento</a
-                                      ></small
-                                    >
-                                  </label>
-                                </div>
-                              </div> -->
-                            </div>
-                            <div class="buttons">
-                              <ul>
-                                <li>
-                                  <button type="submit" class="btn btn-confirm">
-                                    <span class="load"> Confirmar </span>
-                                  </button>
-                                </li>
-                              </ul>
-                            </div>
-                          </form>
+                          </div>
+                          <div class="buttons">
+                            <ul>
+                              <li>
+                                <button type="submit" class="btn btn-confirm">
+                                  <span class="load"> Confirmar </span>
+                                </button>
+                              </li>
+                            </ul>
+                          </div>
+                        </form>
+                        <div class="contact-us">
+                          <a href="#">Fale conosco</a>
                         </div>
                       </div>
                     </div>
@@ -151,14 +155,14 @@ endif;
                     <div class="card card-key-access">
                       <div class="header-card">
                         <h2 class="title title-card">
-                          Informe a chave de acesso
+                          Informar chave de acesso
                         </h2>
                       </div>
                       <div class="key-access">
                         <form id="form-key-access">
                           <div class="body-card">
                             <div class="input-disclaimer">
-                              <p>Dica: </p>
+                              <p>Agora é só informar o código recebido em:</p>
                             </div>
                             <div class="get-info-email">
                               <span class="info-email"
@@ -190,6 +194,9 @@ endif;
                                 </li>
                               </ul>
                             </div>
+                            <div class="contact-us footer-link">
+                              <a href="#">Fale conosco</a>
+                            </div>
                           </div>
                         </form>
                       </div>
@@ -197,7 +204,7 @@ endif;
                   </div>
                   <div class="step step-3 hide" style="display: none">
                     <!-- modal de como quero ser chamado -->
-                    <!-- <div class="modal modal-want-to-be-called">
+                    <div class="modal modal-want-to-be-called">
                       <span class="overlay"></span>
                       <span class="fix"></span>
                       <div class="inside-modal">
@@ -242,440 +249,21 @@ endif;
                           </div>
                         </div>
                       </div>
-                    </div> -->
-                    <div class="modal modal-rules">
-                      <span class="overlay"></span>
-                      <span class="fix"></span>
-                      <div class="inside-modal">
-                        <!-- regulamento -->
-                        <div class="card card-rules">
-                          <button class="buttons close-card-modal close-modal"></button>
-                          <div class="header-card">
-                            <h2 class="title title-card">Regulamento</h2>
-                            <p><strong>“GAMEFICAÇÃO PROGRAMA MODELO RESPONSÁVEL”</strong></p>
-                          </div>
-                          <div class="body-card">
-                            <div class="rules-content">
-                              <ul class="main-rules">
-                                <!-- item 1 -->
-                                <li class="main-items">
-                                  <span>1.</span> A presente campanha (“<b>CAMPANHA</b>”) é
-                                  instituída pelas entidades do mesmo grupo empresarial abaixo
-                                  listadas, sendo conjuntamente tratadas como
-                                  <b>PROMOTORA</b>: <br /><br />
-
-                                  <div>
-                                    <b>CORTEVA AGRISCIENCE DO BRASIL LTDA</b>., com sede na
-                                    Alameda Itapecuru nº 506, Alphaville, no Município de
-                                    Barueri, Estado de São Paulo, inscrita no CNPJ/MF sob o
-                                    nº. 61.064.929/0001-79, nesse ato devidamente representada
-                                    na forma do disposto em seu Estatuto Social, doravante
-                                    denominada <span class="underscored">“Corteva”</span>.
-                                  </div>
-                                </li>
-                                <!-- item 2 -->
-                                <li class="main-items">
-                                  <span>2.</span> <b>O GAME</b>. O objetivo deste game é
-                                  estimular os participantes elegíveis da PROMOTORA a testar
-                                  os conhecimentos adquiridos ao longo da campanha
-                                  educacional, sem fins promocionais ou de divulgação de
-                                  produto, do Programa Modelo Responsável que trata de boas
-                                  práticas agrícolas.
-                                  <ul>
-                                    <li class="sub-items">
-                                      <span>2.1.</span>São elegíveis para a pontuação todos os
-                                      funcionários, estagiários e representantes comerciais da
-                                      PROMOTORA que tenham um dos e-mails abaixo
-                                      <ul>
-                                        <li class="sub-sub-items">
-                                          <span>2.1.1.</span>@corteva.com
-                                        </li>
-                                        <li class="sub-sub-items">
-                                          <span>2.1.2.</span>@repcorteva.com
-                                        </li>
-                                        <li class="sub-sub-items">
-                                          <span>2.1.3.</span>@repbrevant.com
-                                        </li>
-                                        <li class="sub-sub-items">
-                                          <span>2.1.4.</span>@reppioneer.com
-                                        </li>
-                                        <li class="sub-sub-items">
-                                          <span>2.1.5.</span>@granular.ag
-                                        </li>
-                                      </ul>
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>2.2.</span>Não são elegíveis para pontuação desta
-                                      campanha: pessoas que possam ser consideradas “público
-                                      externo”, ou seja, que não tem vínculo de trabalho com a
-                                      Corteva ou suas empresas subsidiárias, como clientes e
-                                      parceiros.
-                                    </li>
-                                  </ul>
-                                </li>
-                                <!-- item 3 -->
-                                <li class="main-items">
-                                  <span>3.</span> <b>PERÍODO DE PARTICIPAÇÃO:</b> De
-                                  29/11/2021 a 06/12/2021, meia noite. <br />
-                                  <b>PERÍODO DE APURAÇÃO:</b> De 07/12/2021.
-                                  <br />
-                                  <b>DATA PARA DISPONIBILIZAÇÃO DO RESULTADO:</b>
-                                  08/12/2021. <br /><br />
-                                  <div>
-                                    <b>COMO FUNCIONA</b>. Durante o
-                                    <b>Período de Participação</b>, as pessoas elegíveis para
-                                    participação ("Participante") que desejar participar,
-                                    deverá acessar a página
-                                    <a
-                                      href="https://modeloresponsavel.com.br/"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      >https://modeloresponsavel.com.br/</a
-                                    >
-                                    (“<b>Game</b>”) e, seguir o passo a passo de cadastro e
-                                    participar.
-                                  </div>
-
-                                  <ul class="roman-sub-items">
-                                    <li class="sub-items">
-                                      <span>i.</span>
-                                      Cada <b>Funcionário</b> terá sua pontuação salva no ranking na
-                                      página do game. O <b>Funcionário poderá jogar uma única vez</b>
-                                      e não conseguirá acessar o game novamente.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>ii.</span>
-                                      No final do jogo o funcionário terá a chance de ganhar
-                                      pontos girando uma roleta virtual.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>iii.</span>
-                                      As perguntas terão pontuação pré-definida.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>iv.</span>
-                                      As perguntas terão tempo pré-definido para que o
-                                      Funcionário possa escolher uma resposta, sendo de 45
-                                      segundos para cada pergunta.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>v.</span>
-                                      O game será composto por 10 perguntas.
-                                    </li>
-                                  </ul>
-                                  <ul>
-                                    <li class="sub-items">
-                                      <span>3.1.</span>A premiação obedecerá a pontuação
-                                      demonstrada na <b>Tabela 1</b>, respeitando os conceitos
-                                      mencionados no item 2.1. Caso os ganhadores fiquem
-                                      empatados, o fator de desempate será baseado no tempo
-                                      que o jogo foi concluído. Dessa forma, quem fizer em
-                                      menos tempo a pontuação equivalente, será o premiado.
-                                    </li>
-                                  </ul>
-                                  <!-- tabela de info do jogo -->
-                                  <div class="tables">
-                                    <p><b>Tabela 1:</b></p>
-                                    <!-- ou imagem ou tabela de fato -->
-                                    <div class="table-wrap">
-                                      <table>
-                                        <thead>
-                                          <tr>
-                                            <th>Requisitos</th>
-                                            <th>A Regra</th>
-                                            <th>Pontuação</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <td><p>Jogar o Game</p></td>
-                                            <td>
-                                              <p>
-                                                Ficar em primeiro, segundo ou terceiro lugar
-                                                no ranking devido a pontuação. O tempo em que
-                                                o game for realizado, será utilizado em caso
-                                                de empate entre os primeiros colocados.
-                                              </p>
-                                              <p>
-                                                Caso os ganhadores sejam RCs, eles ganharão
-                                                prêmios físicos, enviados à sua casa.
-                                              </p>
-                                            </td>
-                                            <td>
-                                              <p>1.500 pontos Plataforma Shine</p>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <td><p>Jogar o Game</p></td>
-                                            <td>
-                                              <p>
-                                                Ficar em quarto ou quinto lugar no ranking
-                                                devido a pontuação 
-                                              </p>
-                                              <p>
-                                                Caso os ganhadores sejam
-                                                RCs, eles ganharão prêmios em valor compatível
-                                                a pontuação ($ 30)
-                                              </p>
-                                            </td>
-                                            <td>
-                                              <p>600 pontos Plataforma Shine</p>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <td><p>Jogar o Game</p></td>
-                                            <td>
-                                              <p>
-                                                Os demais jogadores, participarão de um
-                                                sorteio online, onde haverão 05 sorteados. O
-                                                sorteio será feito através da plataforma
-                                                online Sorteador (www.sorteador.com.br). Caso
-                                                os sorteados sejam RCs, eles ganharão prêmios
-                                                físicos enviados à sua casa
-                                              </p>
-                                            </td>
-                                            <td>
-                                              <p>600 pontos Plataforma Shine</p>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    </div>
-                                  </div>
-                                  <ul>
-                                    <li class="sub-items">
-                                      <span>3.2.</span>Os
-                                      <b>Pontos da Plataforma Shine</b> serão creditados para
-                                      o <b>Funcionário</b> titular até o dia 17/12/2021 <b>(“Data
-                                      de Disponibilização”)</b>.
-
-                                      <ul>
-                                        <li class="sub-sub-items">
-                                          <span>3.2.1.</span>Os Pontos concedidos por meio
-                                          desta campanha poderão ser visualizados pelo
-                                          <b>Funcionário</b> por meio da Plataforma Shine.
-                                        </li>
-                                        <li class="sub-sub-items">
-                                          <span>3.2.2.</span>As condições de participação e
-                                          premiação descritas neste regulamento referem-se
-                                          única e exclusivamente a esta campanha.
-                                        </li>
-                                        <li class="sub-sub-items">
-                                          <span>3.2.3.</span>O Funcionário somente receberá os
-                                          Pontos se estiver entre os 10 primeiros colocados ou
-                                          se for um dos sorteados, devendo também serem
-                                          observadas as demais regras da Plataforma de Pontos
-                                          Shine.
-                                        </li>
-                                        <li class="sub-sub-items">
-                                          <span>3.2.4.</span>Os Pontos recebidos pelos
-                                          colaboradores (exceto representantes comerciais)
-                                          obedecerão às regras de utilização e ao prazo de
-                                          expiração definidos na plataforma Shine.
-                                        </li>
-                                        <li class="sub-sub-items">
-                                          <span>3.2.5.</span>Os Pontos são pessoais,
-                                          intransferíveis e não serão convertidos em dinheiro.
-                                        </li>
-                                      </ul>
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>3.3.</span>Para aqueles que não possuem acesso à
-                                      plataforma Shine, foram definidos prêmios físicos que
-                                      serão entregues aos contemplados.
-                                      <ul>
-                                        <li class="sub-sub-items">
-                                          <span>3.3.1.</span>Os premiados com itens físicos
-                                          receberão o contato da área promotora e para
-                                          confirmação de endereço e posterior envio dos
-                                          prêmios.
-                                        </li>
-                                      </ul>
-                                    </li>
-                                  </ul>
-                                </li>
-                                <!-- item 4 -->
-                                <li class="main-items">
-                                  <span>4.</span><b>REGRAS E EXCEÇÕES</b>. Para poder
-                                  participar deverão ser observadas as condições a seguir.
-
-                                  <ul>
-                                    <li class="sub-items">
-                                      <span>4.1.</span>A participação nesta CAMPANHA é
-                                      voluntária. A participação na presente CAMPANHA ficará
-                                      condicionada, ainda, à leitura e consequente aceite das
-                                      regras deste instrumento.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>4.2.</span>Os prêmios somente serão concedidos aos
-                                      participantes da presente CAMPANHA após a apuração dos
-                                      resultados pela PROMOTORA, considerando-se, para tanto,
-                                      o critério de elegibilidade previamente estabelecido na
-                                      presente CAMPANHA.
-                                    </li>
-                                    <!-- <li class="sub-items">
-                                      <span>4.3.</span> <span class="underscored">Não</span> serão válidas as participações:
-                                    </li> -->
-                                  </ul>
-                                </li>
-                                <!-- item 5 -->
-                                <li class="main-items">
-                                  <span>5.</span><b>DISPOSIÇÕES GERAIS. </b>
-                                  <ul>
-                                    <li class="sub-items">
-                                      <span>5.1.</span>Este regulamento estará disponível ao
-                                      acessar o game, e deverá ser aceito para continuar
-                                      jogando e participar de eventuais premiações.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>5.2.</span>A <b>Corteva</b> não se responsabilizará por
-                                      eventuais situações que, estando fora do seu controle,
-                                      possam prejudicar ou impedir o <b>Funcionário</b> de realizar
-                                      sua participação, tais como a impossibilidade do
-                                      <b>Funcionário</b> se conectar à internet ou oscilações,
-                                      falhas, interrupções e indisponibilidades da rede sem
-                                      fio, da internet, dos serviços prestados pelas
-                                      operadoras de telefonia móvel.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>5.3.</span>O <b>Funcionário</b> é o único responsável
-                                      pelas informações e dados informados no acesso ao game,
-                                      responsabilidade que abrange, também, a precisão e a
-                                      veracidade de tais informações e dados. A <b>Corteva</b> está
-                                      isenta de quaisquer responsabilidades em caso de
-                                      incorreção ou não veracidade das informações e dados
-                                      inseridos ou fornecidos pelo <b>Funcionário</b>.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>5.4.</span>Ao participar desta campanha, os
-                                      <b>Funcionários</b> estarão, automaticamente, concordando e
-                                      autorizando o <b>Corteva</b> a:
-
-                                      <ul>
-                                        <li class="sub-sub-items">
-                                          <span>5.4.1.</span>Utilizar os dados pessoais
-                                          fornecidos no cadastro, sua imagem e voz e demais
-                                          informações que porventura lhe sejam solicitadas,
-                                          exclusivamente e de forma gratuita, para os fins
-                                          necessários à adequada realização, divulgação e
-                                          conclusão desta campanha, podendo estes dados serem
-                                          expostos, publicados, reproduzidos, armazenados e/ou
-                                          de qualquer outra forma usados, pela <b>Corteva</b> pelo
-                                          prazo de 3 meses, contados do término do <b>Período de
-                                          Participação</b>, em quaisquer mídias (inclusive mídia
-                                          impressa ou eletrônica, CD, DVD, revistas, jornais,
-                                          websites, redes sociais, TV aberta ou fechada e
-                                          rádios). A Corteva estará responsável,
-                                          limitadamente, quanto ao período de disparo e
-                                          publicação do conteúdo, excluindo-se, portanto, de
-                                          sua responsabilidade, eventuais difusões espontâneas
-                                          de material que contenham as informações acima
-                                          mencionadas.
-                                        </li>
-                                        <li class="sub-sub-items">
-                                          <span>5.4.2.</span>Suspender, cancelar e/ou excluir
-                                          da campanha o <b>Funcionário</b> que seja identificado
-                                          fraudando ou burlando e/ou tentando fraudar ou
-                                          burlar as regras da campanha ou, ainda, que forneça
-                                          dados falsos, perdendo o direito aos Pontos obtidos
-                                          nesta campanha, ou, por fim, que descumpra qualquer
-                                          cláusula do presente instrumento.
-                                        </li>
-                                        <li class="sub-sub-items">
-                                          <span>5.4.3.</span>Alterar as disposições deste
-                                          regulamento, mediante comunicação prévia aos
-                                          <b>Funcionários</b> com 10 dias de antecedência do início
-                                          da vigência das novas disposições.
-                                        </li>
-                                      </ul>
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>5.5.</span>A CAMPANHA é uma liberalidade da
-                                      PROMOTORA para com seus participantes, razão pela qual
-                                      se reserva o direito de modificá-la ou cancelá-la, a
-                                      qualquer tempo, total ou parcialmente, de acordo com o
-                                      seu livre e exclusivo critério, sem qualquer penalidade
-                                      e sem que gere qualquer direito ao PARTICIPANTE.
-                                      Eventuais alterações ou o cancelamento serão comunicados
-                                      aos participantes pelos mesmos meios adotados na
-                                      divulgação desta CAMPANHA.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>5.6.</span>A contestação dos resultados da presente
-                                      CAMPANHA será aceita e tratada dentro de um prazo máximo
-                                      de 5 dias corridos.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>5.7.</span>A CAMPANHA não está sujeita à Lei
-                                      Federal nº 5.768/71 e aos atos normativos que a
-                                      regulamentam.
-                                    </li>
-                                    <li class="sub-items">
-                                      <span>5.8.</span>As dúvidas e casos omissos serão
-                                      resolvidos pela Corteva, por decisão soberana e
-                                      irrecorrível. Em caso de dúvidas e/ou questionamentos
-                                      relacionados a esta campanha, consulte
-                                      <a href="mailto:http://bpa@corteva.com">bpa@corteva.com</a>. Em
-                                      caso de problemas com acesso, a plataforma possui um
-                                      Fale Conosco para soluções.
-                                    </li>
-                                  </ul>
-                                </li>
-                              </ul>
-
-                              <!-- box footer -->
-                              <div class="box-footer">
-                                <div class="informations">
-                                  <p><strong>CORTEVA AGRISCIENCE DO BRASIL LTDA</strong></p>
-                                  <p>
-                                    Alameda Itapecuru, 506, 2º Andar, Bloco B, Parte-1, CEP
-                                    06.454-080, Distrito Alphaville, Barueri
-                                  </p>
-                                  <p>CEP 06.454-080 - São Paulo/SP</p>
-                                  <p>CNPJ nº 47.180.625/0001-46</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <form id="form-regulation">
-                            <div class="input-rules">
-                              <div class="checkbox">
-                                <div class="checkbox-input">
-                                  <input
-                                    type="checkbox"
-                                    name="check"
-                                    id="rules"
-                                    class="sr-only input-check"
-                                  />
-                                  <label for="rules">
-                                    <span class="check"></span>
-                                    <small
-                                      >Eu li e concordo com o
-                                      <a href="#" class="call-to-rules"
-                                        >Regulamento</a
-                                      ></small
-                                    >
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="buttons">
-                              <ul>
-                                <li>
-                                  <button type="submit" class="btn btn-confirm">
-                                    <span class="load"> Confirmar </span>
-                                  </button>
-                                </li>
-                              </ul>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
                     </div>
+                  </div>
+                </div>
+                <div class="footer-screen-mobile">
+                  <div class="logo-footer">
+                    <img src="<?php print CDN_URL; ?>/images/corteva-logo-black.png" alt="" />
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="footer-screen">
+          <div class="logo-footer">
+            <img src="<?php print CDN_URL; ?>/images/corteva-logo-black.png" alt="" />
           </div>
         </div>
       </div>
@@ -764,22 +352,7 @@ endif;
                           </div>
                         </div>
                         <div class="body-questions">
-                          <ul class="questions-list">
-                            <li class="option">
-                              <div class="option-wrap">
-                                <!-- <span class="alternative">A</span> -->
-                                <input type="radio" name="response" id="yesInput" value="yes" class="sr-only">
-                                <label for="yesInput" class="label-question">Sim</label>
-                              </div>
-                            </li>
-                            <li class="option">
-                              <div class="option-wrap">
-                                <!-- <span class="alternative">B</span> -->
-                                <input type="radio" name="response" id="notInput" value="not" class="sr-only">
-                                <label for="notInput" class="label-question">Não</label>
-                              </div>
-                            </li>
-                          </ul>
+                          <ul class="questions-list"></ul>
                         </div>
                         <div class="footer-questions">
                           <div class="buttons">
@@ -912,9 +485,19 @@ endif;
                       </div>
                     </div>
                   </div>
+                  <div class="footer-screen-mobile">
+                    <div class="logo-footer">
+                      <img src="<?php print CDN_URL; ?>/images/corteva-logo-black.png" alt="" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="footer-screen">
+          <div class="logo-footer">
+            <img src="<?php print CDN_URL; ?>/images/corteva-logo-black.png" alt="" />
           </div>
         </div>
       </div>
@@ -1026,6 +609,11 @@ endif;
                     </div>
                     <div class="content-center-image">
                       <img src="<?php print CDN_URL; ?>/images/roulette-center-image.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="footer-screen-mobile">
+                    <div class="logo-footer">
+                      <img src="<?php print CDN_URL; ?>/images/corteva-logo-white.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -1144,6 +732,11 @@ endif;
             </div>
           </div>
         </div>
+        <div class="footer-screen">
+          <div class="logo-footer">
+            <img src="<?php print CDN_URL; ?>/images/corteva-logo-white.png" alt="" />
+          </div>
+        </div>
       </div>
       <!-- tela de finalização do jogo -->
       <div id="end" style="display: none">
@@ -1153,6 +746,11 @@ endif;
             <div class="screen-height">
               <div class="content">
                 <!-- ranking and finshed-->
+                <div class="content-header">
+                  <div class="header-logo">
+                    <img src="<?php print CDN_URL; ?>/images/small-center-alt.png" alt="" />
+                  </div>
+                </div>
                 <div class="content-body">
                   <div class="card card-end">
                     <div class="header-card">
@@ -1226,8 +824,69 @@ endif;
                     </div>
                   </div>
                 </div>
+                <div class="footer-screen-mobile">
+                  <div class="logo-footer">
+                    <img src="<?php print CDN_URL; ?>/images/corteva-logo-white.png" alt="" />
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="footer-screen">
+          <div class="logo-footer">
+            <img src="<?php print CDN_URL; ?>/images/corteva-logo-white.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- tela de Encerramento do Game -->
+      <div id="endGame" style="display: block">
+        <div class="background gray-background"></div>
+        <div class="container container-content">
+          <div class="wrapper">
+            <div class="screen-height">
+              <div class="content">
+                <div class="content-header">
+                  <div class="header-logo">
+                    <img src="<?php print CDN_URL; ?>/images/small-center.png" alt="" />
+                  </div>
+                </div>
+                <div class="content-body">
+                  <div class="card end-game">
+                    <div class="header">
+                      <h2 class="title title-card">Período Encerrado</h2>
+                    </div>
+                    <div class="body">
+                      <p>O período do game Modelo Responsável foi encerrado.<br>Agradecemos pela sua participação, confira o ranking no botão abaixo.</p>
+                    </div>
+                    <div class="footer">
+                      <div class="buttons">
+                        <ul>
+                          <li>
+                            <button
+                              type="button"
+                              class="btn btn-to-rank call-to-rank"
+                            >
+                              <span> Ir para o Ranking </span>
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-screen-mobile">
+                  <div class="logo-footer">
+                    <img src="<?php print CDN_URL; ?>/images/corteva-logo-black.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-screen">
+          <div class="logo-footer">
+            <img src="<?php print CDN_URL; ?>/images/corteva-logo-black.png" alt="" />
           </div>
         </div>
       </div>
@@ -1624,6 +1283,94 @@ endif;
                     <p>CNPJ nº 47.180.625/0001-46</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal fale conosco -->
+      <div class="modal modal-contact-us">
+        <span class="overlay"></span>
+        <span class="fix"></span>
+        <div class="inside-modal">
+          <!-- modal enviar mensagem -->
+          <div class="card card-send-message-feedback">
+            <button class="buttons close-card-modal close-modal"></button>
+            <div class="header-card">
+              <h2 class="title title-card">Relate aqui o seu problema</h2>
+            </div>
+            <div class="form-send-message">
+              <form id="form-contact-us">
+                <div class="input-group">
+                  <label for="email">Digite seu email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="focused"
+                    placeholder="funcionário@servidor.com.br"
+                  />
+                </div>
+                <div class="input-group box-message">
+                  <label for="message">Mensagem</label>
+                  <textarea
+                    name="mensagem"
+                    id="message"
+                    cols="30"
+                    rows="10"
+                    placeholder="A pergunta da pagina ( ) não está funcionando motivos.... e por isso peço que solucione esse problema."
+                    class="focused"
+                  ></textarea>
+                </div>
+                <div class="buttons">
+                  <ul>
+                    <li>
+                      <button type="submit" class="btn btn-confirm">
+                        <span> Enviar </span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal de mensagem enviada -->
+      <div class="modal modal-send-message-success">
+        <span class="overlay"></span>
+        <span class="fix"></span>
+        <div class="inside-modal">
+          <div class="card card-message-feedback">
+            <button class="buttons close-card-modal close-modal"></button>
+            <div class="header-card">
+              <h2 class="title title-card">Mensagem enviada</h2>
+            </div>
+            <div class="body-message">
+              <p>
+                Sua mensagem foi enviada com sucesso, aguarde nossa resposta no
+                E-mail.
+              </p>
+              <p>Obrigado pelo feedback!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal ranking -->
+      <div class="modal modal-ranking">
+        <span class="overlay"></span>
+        <span class="fix"></span>
+        <div class="inside-modal">
+          <div class="card card-ranking">
+            <button class="buttons close-card-modal close-modal"></button>
+            <div class="header-card">
+              <h2 class="title title-card title-ranked">
+                <span>Ranking</span>
+              </h2>
+            </div>
+            <div class="body-card">
+              <div class="rank">
+                <ul></ul>
               </div>
             </div>
           </div>

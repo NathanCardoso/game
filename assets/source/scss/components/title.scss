@@ -1,5 +1,4 @@
 .title {  
-  text-transform: uppercase;  
   font-weight: bold;
   line-height: 1.2em;
   display: inline-block;
@@ -31,6 +30,9 @@
 
   @media screen and(min-width: $tablet-portrait-up) {
     font-size: rem(28);
+    &.title-start {
+      font-size: rem(50);
+    }
   }
   @media screen and (max-width:$tablet-portrait-down) and (min-width: $mini-tablet-portrait-up){
     font-size: rem(24);

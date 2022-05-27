@@ -22,11 +22,12 @@ $(document).ready(() => {
   getRanking();
 
   // call to modals
-  const modal = modals();
-  modal.open($('.call-to-rules'), $('.modal-rules'))
-  modal.open($('.contact-us > a'), $('.modal-contact-us'))
-  init();  
+  // const modal = modals();
+  // modal.open($('.call-to-rules'), $('.modal-rules'))
+  // modal.open($('.contact-us > a'), $('.modal-contact-us'))
+  // init();  
   start();
+  quiz()
 
   // Helpers
   currentDevice = device();

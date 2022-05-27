@@ -8,7 +8,7 @@
     gap: rem(20);
 
     li {
-      width: 100%;
+      max-width: rem(290);
     }
   }
 
@@ -56,7 +56,7 @@
 
     &.btn-confirm {
       color: #fff;
-      background: map-get($color, bg_blooming_pink);      
+      background: map-get($color, bg_green);      
     }
 
     &.btn-rank-quiz {
@@ -155,7 +155,7 @@
           }
       
           &.btn-confirm {            
-            padding: rem(18) rem(90);
+            padding: rem(20) rem(90);
           }
           &.btn-rank-quiz {
             padding: rem(18);
