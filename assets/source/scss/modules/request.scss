@@ -1,0 +1,61 @@
+#request {
+  .screen-height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .request {
+      // background: url('#{$image-path}laço.png');
+      // background-position: center center;
+      // background-repeat: no-repeat;
+      // background-size: cover;
+      // width: rem(1355);
+      // height: rem(718);
+      // position: relative;
+
+      
+      // &::after {
+      //   content: '';
+      //   top: 30%;
+      //   right: 0;
+      //   bottom: 0;
+      //   left: 50%;
+      //   transform: translate(-50%);
+      //   background: url('#{$image-path}laço.png');
+      //   background-position: center center;
+      //   background-repeat: no-repeat;
+      //   background-size: contain;
+      //   width: rem(1016);
+      //   height: rem(538.5);
+      //   position: absolute;
+      // }
+
+      .title {
+        text-align: center;
+      }
+
+      .buttons {
+        margin-top: rem(60);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 30%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-height: 70vh;
+        background: linear-gradient(transparent, map-get($color, bg_dark_purple_alt));
+      }
+    }
+
+    @media screen and(max-width: $mobile-only) {
+      .request {
+        .buttons {
+          margin-top: rem(28);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+#movie {
+    .screen-height {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .buttons {
+            margin-top: rem(60);
+        }
+    }
+}

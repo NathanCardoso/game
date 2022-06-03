@@ -1,5 +1,9 @@
 .checkbox {
   margin: rem(10) 0;
+  
+  &.regulation {
+    margin: rem(20) 0;
+  }
 
   .checkbox-input {
     
@@ -12,7 +16,7 @@
         display: block;
         width: rem(18);
         height: rem(18);
-        border: rem(1) solid map-get($color, bg_gray);
+        border: rem(1) solid map-get($color, bg_dark_blue);
         border-radius: rem(2);
         background: transparent;
 
@@ -30,7 +34,7 @@
       }
       small {
         line-height: 1.18em;
-        color: #fff;
+        color: map-get($color, bg_dark_blue);
       }
 
       &#check-error { 

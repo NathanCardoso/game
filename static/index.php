@@ -158,7 +158,7 @@ endif;
                         <form id="form-key-access">
                           <div class="body-card">
                             <div class="input-disclaimer">
-                              <p>Dica: </p>
+                              <p>Dica: Esta na porta</p>
                             </div>
                             <div class="get-info-email">
                               <span class="info-email"
@@ -167,7 +167,7 @@ endif;
                             </div>
                             <div class="input-group">
                               <input
-                                type="text"
+                                type="password"
                                 name="password"
                                 id="access-code"
                                 required
@@ -244,15 +244,15 @@ endif;
                       </div>
                     </div> -->
                     <div class="modal modal-rules">
-                      <span class="overlay"></span>
+                      <span class="overlay regulation"></span>
                       <span class="fix"></span>
                       <div class="inside-modal">
                         <!-- regulamento -->
                         <div class="card card-rules">
                           <button class="buttons close-card-modal close-modal"></button>
                           <div class="header-card">
-                            <h2 class="title title-card">Regulamento</h2>
-                            <p><strong>“GAMEFICAÇÃO PROGRAMA MODELO RESPONSÁVEL”</strong></p>
+                            <h2 class="title title-card">Parabéns BigLove!</h2>
+                            <!-- <p><strong>“GAMEFICAÇÃO PROGRAMA MODELO RESPONSÁVEL”</strong></p> -->
                           </div>
                           <div class="body-card">
                             <div class="rules-content">
@@ -639,7 +639,7 @@ endif;
                           </div>
                           <form id="form-regulation">
                             <div class="input-rules">
-                              <div class="checkbox">
+                              <div class="checkbox regulation">
                                 <div class="checkbox-input">
                                   <input
                                     type="checkbox"
@@ -703,13 +703,10 @@ endif;
           <div class="wrapper">
             <div class="screen-height">
               <div class="content">
-                <div class="header-logo">
-                  <img src="<?php print CDN_URL; ?>/images/small-center-alt.png" alt="" />
-                </div>
                 <div class="content-steps">
                   <!-- inicio do quiz -->
                   <div class="step step-1" style="display: block">
-                    <div class="start-quiz">
+                    <div class="card start-quiz">
                       <div class="header-quiz">
                         <h2 class="title title-quiz">
                           Nada como começar uma boa conversa com uma
@@ -724,17 +721,7 @@ endif;
                                 <span class="load"> Começar </span>
                               </button>
                             </li>
-                            <li>
-                              <button class="btn btn-rank-quiz call-to-rank">
-                                <span class="load"> Ranking </span>
-                              </button>
-                            </li>
                           </ul>
-                        </div>
-                      </div>
-                      <div class="footer-quiz">
-                        <div class="contact-us footer-link">
-                          <a href="#">Fale conosco</a>
                         </div>
                       </div>
                     </div>
@@ -742,7 +729,7 @@ endif;
                   <!-- telas do quiz dinamico -->
                   <div class="step step-2 hide" style="display: none">
                     <!-- modal de acerto ou erro -->
-                    <div class="questions-quiz">
+                    <div class="card questions-quiz">
                       <form id="form-quiz">
                         <input type="hidden" id="id-question" />
                         <input type="hidden" id="time-question" />
@@ -983,7 +970,7 @@ endif;
                 <!-- roleta entra aqui-->
                 <div class="roulette">
                   <div class="roulette-content">
-                    <div class="spin-the-roulette">
+                    <div class="card spin-the-roulette">
                       <h2 class="title title-roulette">
                         GIRE A ROLETA PARA GANHAR MAIS PONTOS
                       </h2>
@@ -1023,9 +1010,6 @@ endif;
                           <span class="sr-only">90</span>
                         </div>
                       </div>
-                    </div>
-                    <div class="content-center-image">
-                      <img src="<?php print CDN_URL; ?>/images/roulette-center-image.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -1622,6 +1606,68 @@ endif;
                     </p>
                     <p>CEP 06.454-080 - São Paulo/SP</p>
                     <p>CNPJ nº 47.180.625/0001-46</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Tela do video-->
+      <div id="movie" style="display:none;">
+        <div class="background gray-background"></div>
+        <div class="container container-default">
+          <div class="screen-height">
+            <div class="wrapper">
+              <div class="movie" style="display:block;">
+                <div class="card start-quiz">
+                  <div class="header-quiz">
+                    <h2 class="title title-start">
+                      VIDEOVIDEOVIDEOVEOVIDEOVIDEO
+                    </h2>
+                  </div>
+                  <div class="body-quiz">
+                    <div class="buttons">
+                      <ul>
+                        <li>
+                          <button class="btn btn-confirm">
+                            <span class="load"> CONTINUAR </span>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Tela do pedido-->
+      <div id="request" style="display:none;">
+        <div class="request-background">
+          <div class="container container-default">
+            <div class="screen-height">
+              <div class="wrapper">
+                <div class="request" style="display: block">
+                  <div class="card start-quiz">
+                    <div class="header-quiz">
+                      <h2 class="title title-start">
+                        Poderosa, <br>aceita casar comigo?
+                      </h2>
+                    </div>
+                    <div class="body-quiz">
+                      <div class="buttons">
+                        <ul>
+                          <li>
+                            <button class="btn btn-confirm">
+                              <span class="load"> ACEITAR </span>
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

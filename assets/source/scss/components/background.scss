@@ -5,8 +5,8 @@
   bottom: 0;
   left: 0;
   min-height: 100vh;
-  background: url('#{$image-path}background.png');
-  
+  background: url("#{$image-path}background.png");
+
   &::after {
     content: '';
     position: absolute;
@@ -20,6 +20,39 @@
     transition: opacity .35s linear;
   }
 
+  // &.request-background {
+  //   background: url("#{$image-path}request-background.png");
+  //   background-position: center center;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   position: relative;
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   background: url("#{$image-path}coracoes.png");
+    //   background-repeat: no-repeat;
+    //   background-position: center center;
+    //   background-size: cover;
+    //   transition: opacity 0.35s linear;
+    // }
+
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 70%;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   max-height: 30vh;
+    //   background: linear-gradient(transparent, map-get($color, bg_dark_blue));
+    // }
+  }
+
   // &::before {
   //   background: linear-gradient(90deg, rgba(61,48,121,1) 50%, rgba(159,197,77,1) 50%);
   // }
@@ -28,7 +61,7 @@
   //   background: radial-gradient(circle, rgba(185,186,188,1) 50%, rgba(148,150,152,1) 85%);
 
   // }
-  // &.two-background { 
+  // &.two-background {
   //   &::before {
   //     opacity: 1;
   //   }
@@ -45,10 +78,18 @@
   //     background: url('#{$image-path}bg-image-color-circles.png') no-repeat center center;
   //     background-size: contain;
   //   }
-  // } 
-  
+  // }
+
   // &.gray-background {
   //   backdrop-filter: blur(10px);
   //   -webkit-backdrop-filter: blur(10px);
   // }
+// }
+
+.request-background {
+  background: url("#{$image-path}request-background.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }

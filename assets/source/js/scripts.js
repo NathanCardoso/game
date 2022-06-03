@@ -28,6 +28,8 @@ $(document).ready(() => {
   // init();  
   start();
   quiz()
+  movie()
+  roulette()
 
   // Helpers
   currentDevice = device();

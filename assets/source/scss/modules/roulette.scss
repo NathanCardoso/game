@@ -13,7 +13,7 @@
     .roulette-content {
       .spin-the-roulette {
         max-width: rem(700);
-        background: map-get($color, bg_blue);
+        background: map-get($color, bg_dark_blue);
         border: rem(3) solid #fff;
         border-radius: rem(25);
       }

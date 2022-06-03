@@ -10,22 +10,25 @@ const roulette = () => {
   AUDIO_LOAD.startGame.stop()
 
   finishRoulette.on('click', function() {
-    ajax({
-      action: 'updateExtraPoints',
-      method: 'post',
-      data: {
-        extraPoints: myPoints
-      },
-      headers: {
-        Authorization: `Bearer ${storage("GET", "corteva-token")}}`
-      },
-      callback: function(data) {        
-        if(data.sucesso) {
-          end()
-          switchScreen(currentScreen, currentScreen.next())
-        }
-      }
-    })
+    // ajax({
+    //   action: 'updateExtraPoints',
+    //   method: 'post',
+    //   data: {
+    //     extraPoints: myPoints
+    //   },
+    //   headers: {
+    //     Authorization: `Bearer ${storage("GET", "corteva-token")}}`
+    //   },
+    //   callback: function(data) {        
+    //     if(data.sucesso) {
+    //       end()
+    //       switchScreen(currentScreen, currentScreen.next())
+    //     }
+    //   }
+    // })
+
+    switchScreen(currentScreen, $('#movie'))
+    console.log('lalala')
   })
 
 

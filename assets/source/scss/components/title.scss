@@ -3,6 +3,10 @@
   line-height: 1.2em;
   display: inline-block;
 
+  &.title-start {
+    color: map-get($color, bg_dark_blue);
+  }
+
   &.title-card {
     color: map-get($color, bg_dark_blue);
   }

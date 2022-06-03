@@ -51,7 +51,9 @@
 
     &.btn-cancel {
       color: #fff;
-      background: transparent;
+      background: black;
+      opacity: .6;
+      border: none;
     }
 
     &.btn-confirm {
@@ -69,16 +71,16 @@
       display: flex;
       align-items: center;
       gap: rem(6);
-      padding: rem(18) rem(50);
+      padding: rem(20) rem(90);
 
       &.answer-correct {
         background: map-get($color, bg_green);
-        color: map-get($color, bg_dark_blue);
+        color: map-get($color, bg_white);
 
         .arrow {
           svg {
             path {
-              fill: map-get($color, bg_dark_blue);
+              fill: map-get($color, bg_white);
             }
           }
         }
@@ -97,7 +99,7 @@
     }
 
     &.btn-next-question {
-      color: map-get($color, bg_dark_blue);
+      color: map-get($color, bg_white);
       background: map-get($color, bg_green);
       border-radius: rem(40);
     }
@@ -167,7 +169,7 @@
           }
 
           &.btn-next-question {
-            padding: rem(20);
+            padding: rem(20) rem(90);
           }
         }
       }

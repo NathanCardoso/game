@@ -26,6 +26,10 @@
     &.light-overlay {
       opacity: .95;
     }
+
+    &.regulation {
+      background: transparent;
+    }
   }
 
   .fix {
