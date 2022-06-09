@@ -25,7 +25,7 @@ const js = () =>
       './source/js/components/*.js',
       './source/js/scripts.js']) 
     .pipe(concat('scripts.js'))
-    .pipe(minify())   
+    // .pipe(minify())   
     .pipe(gulp.dest('../static/js'));
 
 // Sass to css

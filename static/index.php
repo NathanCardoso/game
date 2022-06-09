@@ -57,30 +57,6 @@ endif;
           </div>
         </div>
       </div>      
-      <!-- tela inicial -->
-      <div id="welcome" style="display: none">
-        <div class="background two-background"></div>
-        <!-- transição das logos -->
-        <div class="container container-content">
-          <div class="wrapper">
-            <div class="screen-height">
-              <div class="transitions">
-                <!-- as duas images das fases verde e roxo -->
-                <div class="transition-bg">
-                  <div class="images">
-                    <img src="<?php print CDN_URL; ?>/images/fases.png" alt="" class="fases" />
-                    <img
-                      src="<?php print CDN_URL; ?>/images/big-circulo-centro.png"
-                      alt=""
-                      class="image-center"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <!-- tela de inicio de login -->
       <div id="start" style="display: block">
         <div class="background gray-background"></div>
@@ -744,9 +720,9 @@ endif;
                           </div>
                           <div class="question-statement">
                             <h3 class="question">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              <!-- Lorem ipsum dolor sit amet consectetur adipisicing
                               elit. Culpa similique earum totam assumenda
-                              quaerat sit incidunt molestias hic sint.
+                              quaerat sit incidunt molestias hic sint. -->
                             </h3>
                           </div>
                         </div>
@@ -1119,92 +1095,6 @@ endif;
                               </li>
                             </ul>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- tela de finalização do jogo -->
-      <div id="end" style="display: none">
-        <div class="background two-background"></div>
-        <div class="container container-content">
-          <div class="wrapper">
-            <div class="screen-height">
-              <div class="content">
-                <!-- ranking and finshed-->
-                <div class="content-body">
-                  <div class="card card-end">
-                    <div class="header-card">
-                      <h2 class="title title-card">Obrigado por participar!</h2>
-                      <small>A sua nota e o tempo se encontra abaixo:</small>
-                    </div>
-                    <div class="body-card">
-                      <div class="body-card-content">
-                        <!-- aqui entra o colocado e sua posição -->
-                        <div class="placeds top-ranked">
-                          <div class="placed-content">
-                            <div class="number-ranked">
-                              <div class="number-wrap">
-                                <span class="number">1°</span>
-                              </div>
-                            </div>
-                            <div class="name-placed">
-                              <h4>MARCIO RANGEL DE OLIVEIRA</h4>
-                              <span class="sub-name">REPBREVANT</span>
-                            </div>
-                            <div class="total-of-points winners first-place">
-                              <span class="number">130</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="footer-card">
-                      <!-- aqui entra os dois boxes de finalização e tempo de resposta -->
-                      <div class="grid-boxes">
-                        <div class="grid box-time-duration">
-                          <div class="box-header">
-                            <small>O seu <span>tempo</span> no quiz foi</small>
-                          </div>
-                          <div class="box-body">
-                            <div class="timer-box">
-                              <span>10:25</span>
-                            </div>
-                          </div>
-                          <div class="box-footer">
-                            <div class="buttons">
-                              <ul>
-                                <li>
-                                  <button
-                                    type="button"
-                                    class="btn btn-to-rank call-to-rank"
-                                  >
-                                    <span> Ranking </span>
-                                  </button>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="grid box-congratulations">
-                          <div class="box-header">
-                            <strong>Parabéns</strong>
-                            <small>pela sua <span>pontuação</span>!</small>
-                          </div>
-                          <!-- <div class="box-footer">
-                          <div class="buttons">
-                            <ul>                              
-                              <li>
-                                <button type="button" class="btn btn-to-finish">Finalizar</button>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>                         -->
                         </div>
                       </div>
                     </div>
@@ -1676,6 +1566,6 @@ endif;
         </div>
       </div>
     </div>
-    <script src="<?php print CDN_URL; ?>/js/scripts-min.js?<?php print dechex(crc32(file_get_contents('js/scripts-min.js'))); ?>"></script>
+    <script src="<?php print CDN_URL; ?>/js/scripts.js?<?php print dechex(crc32(file_get_contents('js/scripts-min.js'))); ?>"></script>
   </body>
 </html>

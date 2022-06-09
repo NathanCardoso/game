@@ -28,7 +28,6 @@ const roulette = () => {
     // })
 
     switchScreen(currentScreen, $('#movie'))
-    console.log('lalala')
   })
 
 

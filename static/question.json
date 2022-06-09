@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Questão 01",
+    "description": "Seria correto afirmar que o pastel favorito do Nathan é o de frango com catupiry?",
+    "answer": "not"
+  },
+  {
+    "question": "Questão 02",
+    "description": "A frase: 'Gabrielly é a mais bagunceira da casa' esta correta?",
+    "answer": "yes"
+  },
+  {
+    "question": "Questão 03",
+    "description": "A frase: 'Nathan é considerado uma pessoa impulsiva?' esta correta?",
+    "answer": "not"
+  },
+  {
+    "question": "Questão 04",
+    "description": "A Gabrielly é a pessoa que mais demora no banho?",
+    "answer": "yes"
+  }
+]
