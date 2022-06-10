@@ -25,7 +25,7 @@ $(document).ready(() => {
   // const modal = modals();
   // modal.open($('.call-to-rules'), $('.modal-rules'))
   // modal.open($('.contact-us > a'), $('.modal-contact-us'))
-  // init();  
+  init();  
   start();
   quiz()
   movie()

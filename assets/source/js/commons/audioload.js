@@ -4,7 +4,7 @@ const audioLoad = () => {
 
     const { loop, volume } = { loop: false, volume: 0.15, ...(opts || {})}
     return new Howl({
-      src: CONFIG.cdnURL+`/sounds/${name}`,
+      src: `../static/sounds/${name}`,
       autoplay: false,
       loop,
       volume

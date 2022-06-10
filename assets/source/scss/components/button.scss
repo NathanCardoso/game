@@ -23,7 +23,14 @@
     align-items: center;
     justify-content: center;
 
+    &.disabled {
+      opacity: .6;
+      background: map-get($color, bg_graphitte_alt);
+      cursor: not-allowed;
+    }
+
     &.btn-loading {
+      cursor: progress;
       .load {
         position: relative;
 
@@ -157,6 +164,9 @@
           }
       
           &.btn-confirm {            
+            padding: rem(20) rem(90);
+          }
+          &.disabled {
             padding: rem(20) rem(90);
           }
           &.btn-rank-quiz {

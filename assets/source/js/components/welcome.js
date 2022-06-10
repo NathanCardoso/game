@@ -3,6 +3,12 @@ const welcome = () => {
   const screenStart = screenWelcome.next()
 
   AUDIO_LOAD.welcome.play()
+
+  // AUDIO_LOAD -> obj principal 
+  // welcome -> é o nome da chave da musica 
+  // play() -> ação em relação ao som - play ou stop
+
+
   screenWelcome.addClass('start-animation')
   
   setTimeout(()=> {
