@@ -25,9 +25,14 @@
     .main-items {
       width: 100%;
 
-      + li {
+      ul {
         margin-top: rem(32);
+
+        .sub-sub-items {
+          margin: rem(16) 0 0 rem(16);
+        }
       }
+
 
       > ul {
         margin-top: rem(16);
@@ -55,6 +60,14 @@
             }
           }
         }
+      }
+    }
+
+    .description {
+      margin-top: rem(20);
+
+      p {
+        margin-top: rem(10);
       }
     }
   }

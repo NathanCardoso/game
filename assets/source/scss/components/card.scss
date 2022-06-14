@@ -207,6 +207,11 @@
     }
   }
 
+  &.card-movie {
+    padding: 0;
+    overflow: hidden;
+  }
+
   @media screen and (min-width: $mini-tablet-portrait-up) {
     padding: rem(54) rem(150);
 

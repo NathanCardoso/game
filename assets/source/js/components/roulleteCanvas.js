@@ -208,10 +208,10 @@ const rouletteCanvas = () => {
       breaking = false
       released = false
       pressed = false
-      myPoints = awards[Math.floor(currentItem)].value
+      myPoints = 1
       AUDIO_LOAD.rotateRoulette.stop()
       
-      if(myPoints > 0) {
+      if(myPoints == 1) {
         winnerPoints.find('.more-points').text(`+${myPoints} pontos`)
         setTimeout(()=>{
           winnerPoints.fadeIn(

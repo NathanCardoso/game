@@ -43,7 +43,7 @@
     display: inline-block;
     vertical-align: middle;
     max-width: calc(100% - #{rem(1)});
-    width: calc(100% - 64px);
+    width: rem(860);
     text-align: left;
     margin: rem(35) 0;
     font-size: rem(16);
