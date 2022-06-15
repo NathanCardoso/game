@@ -2,7 +2,7 @@ const welcome = () => {
   const screenWelcome = $('#welcome')  
   const screenStart = screenWelcome.next()
 
-  AUDIO_LOAD.welcome.play()
+  AUDIO_LOAD.startGame.play()
 
   // AUDIO_LOAD -> obj principal 
   // welcome -> é o nome da chave da musica 

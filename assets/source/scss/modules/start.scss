@@ -30,6 +30,7 @@
 
     .content-steps {
       .step-3 {
+        padding: rem(50);
         &.visible {
           > .modal {
             display: block;

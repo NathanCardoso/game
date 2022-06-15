@@ -4817,37 +4817,6 @@ const audioEvents = () => {
   })
 
 }
-// const button = () => {
-//   btnLogin = $('.login')
-//   cardLogin = $('#start')
-//   btnInit = $('.init')
-//   // cardInit = $('#quiz .step.step-1')
-//   btnCorrect = $('.btn-next-question')
-//   btnWrong = $('.btn-not-question')
-//   modalFaedbackCorrect = $('.modal-answer-correct')
-//   modalFaedbackWrong = $('.modal-answer-wrong')
-
-//   btnLogin.on('click', function() {
-//     cardLogin.hide()
-//   })
-
-//   btnInit.on('click', function() {
-//     const step = $(this).closest('.step.step-1')
-//     step.hide(function() {
-//       step.next().show()
-//     })
-//   })
-
-//   btnCorrect.on('click', function(e) {
-//     e.preventDefault()
-//     modalFaedbackCorrect.fadeIn()
-//   })
-
-//   btnWrong.on('click', function(e) {
-//     e.preventDefault()
-//     modalFaedbackWrong.fadeIn()
-//   })
-// }
 const formContactUs = () => {
 
   const formContactUs = $('#form-contact-us')
@@ -5095,8 +5064,8 @@ const quiz = () => {
   let count = 0;
 
 
-  //   AUDIO_LOAD.welcome.stop()
-  //   AUDIO_LOAD.startGame.play()
+    // AUDIO_LOAD.startGame.stop()
+    // AUDIO_LOAD.startGame.play()
 
   btnInit.on('click', function () {
     $(this).addClass('btn-loading')
@@ -5104,6 +5073,7 @@ const quiz = () => {
     setTimeout(() => {
       switchStep(currentStep, currentStep.find('.step-2'))
       getQuestions()
+      AUDIO_LOAD.welcome.stop()
     }, 1500)
   })
 
@@ -5204,9 +5174,11 @@ const quiz = () => {
     if(!responseAnswer(responseAlternateRadio,count)){
       console.log('error');
       $(modalFeedbackWrong).fadeIn()
+      AUDIO_LOAD.feedbackWrong.play()
     } else {
       console.log('certo');
       $(modalFeedbackRight).fadeIn()
+      AUDIO_LOAD.feedbackYes.play()
       count++;
     }
     
@@ -5313,8 +5285,8 @@ const roulette = () => {
   const modalYourChanceToWinPoinst = $('#roulette .modal.modal-your-chance')
 
   modalYourChanceToWinPoinst.fadeIn()
-  AUDIO_LOAD.goToRoulette.play()
   AUDIO_LOAD.startGame.stop()
+  AUDIO_LOAD.goToRoulette.play()
 
   finishRoulette.on('click', function() {
     // ajax({
@@ -5335,6 +5307,7 @@ const roulette = () => {
     // })
 
     switchScreen(currentScreen, $('#movie'))
+    AUDIO_LOAD.startGame.stop()
   })
 
 
@@ -5703,7 +5676,8 @@ const start = () => {
   let errorFeedbackMessageAccess
   let _checkbox = false
 
-  AUDIO_LOAD.welcome.play()
+  AUDIO_LOAD.startGame.play()
+  // AUDIO_LOAD.startGame.stop()
 
 
   //step 1
@@ -5815,6 +5789,7 @@ const start = () => {
   
   function checked () {
     const btnSubmit = $('#form-regulation .buttons button.disabled')
+    console.log(btnSubmit)
     $inputRulesCheck.on('change', function(){
       
       btnSubmit.prop('disabled', false) 
@@ -5920,7 +5895,7 @@ const welcome = () => {
   const screenWelcome = $('#welcome')  
   const screenStart = screenWelcome.next()
 
-  AUDIO_LOAD.welcome.play()
+  AUDIO_LOAD.startGame.play()
 
   // AUDIO_LOAD -> obj principal 
   // welcome -> é o nome da chave da musica 

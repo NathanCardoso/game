@@ -16,7 +16,8 @@ const start = () => {
   let errorFeedbackMessageAccess
   let _checkbox = false
 
-  AUDIO_LOAD.welcome.play()
+  AUDIO_LOAD.startGame.play()
+  // AUDIO_LOAD.startGame.stop()
 
 
   //step 1
@@ -128,6 +129,7 @@ const start = () => {
   
   function checked () {
     const btnSubmit = $('#form-regulation .buttons button.disabled')
+    console.log(btnSubmit)
     $inputRulesCheck.on('change', function(){
       
       btnSubmit.prop('disabled', false) 

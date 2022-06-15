@@ -6,8 +6,8 @@ const roulette = () => {
   const modalYourChanceToWinPoinst = $('#roulette .modal.modal-your-chance')
 
   modalYourChanceToWinPoinst.fadeIn()
-  AUDIO_LOAD.goToRoulette.play()
   AUDIO_LOAD.startGame.stop()
+  AUDIO_LOAD.goToRoulette.play()
 
   finishRoulette.on('click', function() {
     // ajax({
@@ -28,6 +28,7 @@ const roulette = () => {
     // })
 
     switchScreen(currentScreen, $('#movie'))
+    AUDIO_LOAD.startGame.stop()
   })
 
 

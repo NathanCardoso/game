@@ -16,8 +16,8 @@ const quiz = () => {
   let count = 0;
 
 
-  //   AUDIO_LOAD.welcome.stop()
-  //   AUDIO_LOAD.startGame.play()
+    // AUDIO_LOAD.startGame.stop()
+    // AUDIO_LOAD.startGame.play()
 
   btnInit.on('click', function () {
     $(this).addClass('btn-loading')
@@ -25,6 +25,7 @@ const quiz = () => {
     setTimeout(() => {
       switchStep(currentStep, currentStep.find('.step-2'))
       getQuestions()
+      AUDIO_LOAD.welcome.stop()
     }, 1500)
   })
 
@@ -125,9 +126,11 @@ const quiz = () => {
     if(!responseAnswer(responseAlternateRadio,count)){
       console.log('error');
       $(modalFeedbackWrong).fadeIn()
+      AUDIO_LOAD.feedbackWrong.play()
     } else {
       console.log('certo');
       $(modalFeedbackRight).fadeIn()
+      AUDIO_LOAD.feedbackYes.play()
       count++;
     }
     
