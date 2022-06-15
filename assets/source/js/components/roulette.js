@@ -6,27 +6,9 @@ const roulette = () => {
   const modalYourChanceToWinPoinst = $('#roulette .modal.modal-your-chance')
 
   modalYourChanceToWinPoinst.fadeIn()
-  AUDIO_LOAD.startGame.stop()
   AUDIO_LOAD.goToRoulette.play()
 
   finishRoulette.on('click', function() {
-    // ajax({
-    //   action: 'updateExtraPoints',
-    //   method: 'post',
-    //   data: {
-    //     extraPoints: myPoints
-    //   },
-    //   headers: {
-    //     Authorization: `Bearer ${storage("GET", "corteva-token")}}`
-    //   },
-    //   callback: function(data) {        
-    //     if(data.sucesso) {
-    //       end()
-    //       switchScreen(currentScreen, currentScreen.next())
-    //     }
-    //   }
-    // })
-
     switchScreen(currentScreen, $('#movie'))
     AUDIO_LOAD.startGame.stop()
   })
@@ -35,6 +17,7 @@ const roulette = () => {
   btnGoRoulette.on('click', function(){
     $(this).closest('div.modal').fadeOut(
       function() {
+        AUDIO_LOAD.startGame.stop()
         AUDIO_LOAD.rouletteGame.play()
       }
     )

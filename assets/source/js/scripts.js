@@ -16,10 +16,8 @@ $(document).ready(() => {
 
   // Components 
   validationForms();
-  formContactUs();
   audioEvents();
   questions();
-  getRanking();
 
   // call to modals
   // const modal = modals();
@@ -28,12 +26,11 @@ $(document).ready(() => {
   init();  
   start();
   quiz()
-  movie()
+  // movie()
   roulette()
 
   // Helpers
   currentDevice = device();
-
 
 });
 

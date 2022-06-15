@@ -1,6 +1,8 @@
 const init = () => {
   const modalConfirm = $(".modal.modal-animation-init");
-  const btnInitGame = modalConfirm.find(".buttons .confirm-game");  
+  const btnInitGame = $(".btn-confirm.confirm-game");  
+
+  console.log(btnInitGame)
 
   setTimeout(() => {
     loadingGame.removeClass("show");
