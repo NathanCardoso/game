@@ -204,49 +204,58 @@ endif;
                   </div>
                   <div class="step step-3 hide" style="display: none">
                     <!-- modal de como quero ser chamado -->
-                    <div class="modal modal-want-to-be-called">
-                      <span class="overlay"></span>
-                      <span class="fix"></span>
-                      <div class="inside-modal">
-                        <div
-                          class="card card-want-to-be-called card-inside-modal"
-                        >
-                          <div class="header-card">
-                            <h2 class="title title-card">
-                              Como prefere ser chamado?
-                            </h2>
+                    <div class="card card-form-start">
+                      <div class="header-card">
+                        <h2 class="title title-card">
+                          Por favor informe seu email
+                        </h2>
+                      </div>
+                      <div class="form-start">
+                        <form id="form-login">
+                          <div class="input-group">
+                            <label for="email">Digite seu email</label>
+                            <input
+                              class="focused"
+                              type="email"
+                              id="email"
+                              name="email"
+                              placeholder="funcionário@servidor.com.br"
+                            />
+                            <span class="error-info"></span>
                           </div>
-                          <div class="body-card">
-                            <div class="input-disclaimer">
-                              <p>Digite seu nome completo no campo abaixo:</p>
-                            </div>
-                            <div class="form-want-to-be-called">
-                              <form id="form-rename-user">
-                                <div class="input-group">
-                                  <label for="nome">Digite seu nome</label>
-                                  <input
-                                    type="text"
-                                    id="nome"
-                                    class="focused"
-                                    name="nome"
-                                    placeholder="Funcionário Silva Andrade"
-                                  />
-                                </div>
-                                <div class="buttons">
-                                  <ul>
-                                    <li>
-                                      <button
-                                        type="submit"
-                                        class="btn btn-confirm"
-                                      >
-                                        <span class="load"> Enviar </span>
-                                      </button>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </form>
+                          <div class="input-rules">
+                            <div class="checkbox">
+                              <div class="checkbox-input">
+                                <input
+                                  type="checkbox"
+                                  name="check"
+                                  id="rules"
+                                  class="sr-only input-check"
+                                />
+                                <label for="rules">
+                                  <span class="check"></span>
+                                  <small
+                                    >Eu li e concordo com o
+                                    <a href="#" class="call-to-rules"
+                                      >Regulamento</a
+                                    ></small
+                                  >
+                                </label>
+                              </div>
                             </div>
                           </div>
+                          <div class="buttons">
+                            <ul>
+                              <li>
+                                <button type="submit" class="btn btn-confirm">
+                                  <span class="load"> Confirmar </span>
+                                </button>
+                              </li>
+                            </ul>
+                          </div>
+                        </form>
+                        <div class="contact-us">
+                          <a href="#">Fale conosco</a>
                         </div>
                       </div>
                     </div>

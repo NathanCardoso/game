@@ -50,6 +50,12 @@ const images = () =>
     .src('./source/images/**/*')
     .pipe(gulp.dest('../static/images'));
 
+// Images
+const videos = () =>
+  gulp
+    .src('./source/movies/**/*')
+    .pipe(gulp.dest('../static/movies'));
+
 // sounds 
 const sounds = () => {
   gulp
@@ -61,11 +67,13 @@ gulp.watch(['./source/js'], js);
 gulp.watch(['./source/scss'], scss);
 gulp.watch(['./source/fonts'], fonts);
 gulp.watch(['./source/images'], images);
+gulp.watch(['./source/videos'], videos);
 gulp.watch(['./source/sounds'], sounds);
 
 exports.js = js;
 exports.scss = scss;
 exports.fonts = fonts;
 exports.images = images;
+exports.videos = videos;
 
-exports.default = gulp.parallel(js, scss, fonts, images, sounds);
+exports.default = gulp.parallel(js, scss, fonts, images, videos, sounds);
